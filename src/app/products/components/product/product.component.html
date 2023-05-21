@@ -1,0 +1,22 @@
+<div class="card"  >
+  <div [routerLink]="['/detiles' , data.id]">
+    <img src={{data.image}} class="card-img-top" alt="...">
+  </div>
+    <div class="card-body">
+      <h5 class="card-title">{{data.title}}</h5>
+      <p class="card-text">{{data.description}}</p>
+    </div>
+  <div class="card-body">
+    <div class="d-flex ">
+      <a   class="btn btn-primary" *ngIf="!addbtn" (click)="btnChange()">Add To Cart</a>
+      <div class="d-flex w-50" *ngIf="addbtn">
+        <input type="number" min="1" class="form-control" [(ngModel)]="amount">
+        <button class="btn btn-secondary"  (click)="add()">Add</button>
+      </div>
+      <span>{{data.price | currency}} </span>
+    </div>
+  </div>
+</div>
+
+
+

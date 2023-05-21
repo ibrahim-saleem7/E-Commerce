@@ -1,0 +1,14 @@
+
+<div class="w-25 my-5">
+  <app-select [data]="catigroes" (selectedValue)="fliterCatigores($event)"></app-select>
+</div>
+
+  <div class="row" *ngIf="!looding">
+    <div class=" col-md-3 col-sm-12 my-3" *ngFor="let item of products"   >
+      <app-product [data]="item" (itme)="addToCart($event)" ></app-product>
+    </div>
+  </div>
+
+  <div class="text-center w-100" *ngIf="looding">
+    <app-spiner></app-spiner>
+  </div>

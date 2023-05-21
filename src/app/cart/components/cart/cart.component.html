@@ -1,0 +1,51 @@
+<div class="vh-100">
+
+  <div class="my-5">
+    <p>You have <span>{{lenghtOfCArt}}</span> item  in your cart</p>
+    <button class="btn btn-outline-danger" (click)="clear()">Clear Shoping Cart</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cart , let index =index">
+        <th >
+          <div class="w- text-center">
+            <img src="{{item.pro.image}}" alt="">
+          </div>
+        </th>
+        <td>{{item.pro.title}}</td>
+        <td>{{item.pro.price | currency}}</td>
+        <td>
+          <div class="d-flex">
+            <button class="btn btn-dark" (click)="addAmount(index)" >+</button>
+            <input type="number" min="1" (change)="change()" [(ngModel)]="item.quantity" class="form-control w-50 mx-3">
+            <button class="btn btn-dark" (click)="minsAmount(index)">-</button>
+          </div>
+        </td>
+        <td>{{item.pro.price * item.quantity | currency}}</td>
+        <td><button class="btn btn-danger" (click)="deleteProduct(index)">Delete</button></td>
+      </tr>
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="6" class="text-end">
+          Total : {{total | currency}}
+          <button class="btn btn-success" (click)="addCart()">Order Now</button>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+
+</div>
+
+

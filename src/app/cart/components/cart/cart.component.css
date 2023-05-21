@@ -1,0 +1,14 @@
+.w-1{
+  width: 70px;
+  height: 100px;
+}
+img{
+  min-height: 130px !important;
+  max-height: 150px;
+  max-width: 150px;
+}
+
+span{
+  color: #e91e63;
+font-weight: 600;
+}

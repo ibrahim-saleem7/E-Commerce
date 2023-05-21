@@ -1,0 +1,27 @@
+<div>
+  <div class="row my-5 vh-75" *ngIf="!looding">
+    <div class="col-3" >
+      <div>
+        <img class="mw-100 " src="{{product.image}}" alt="">
+      </div>
+    </div>
+    <div class="col-6">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong >Title : </strong>{{product.title}}</li>
+        <li class="list-group-item"><strong>Category : </strong>{{product.category}}</li>
+        <li class="list-group-item"><strong>Description : </strong>{{product.description}}</li>
+        <li class="list-group-item"><strong>Rate : </strong>{{product.rating.rate}}</li>
+        <li class="list-group-item"><strong>Count : </strong>{{product.rating.count}}</li>
+        <li class="list-group-item"><strong>Price : </strong>{{product.price | currency}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="text-center w-100" *ngIf="looding">
+    <app-spiner></app-spiner>
+  </div>
+
+</div>
+
+
+
